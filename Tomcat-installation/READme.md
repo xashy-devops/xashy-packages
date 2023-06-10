@@ -27,11 +27,11 @@ sudo yum install wget unzip -y
 ## Install Tomcat version 9.0.75
 ### Download and extract the tomcat server
 ``` sh
-sudo wget  https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.75/bin/apache-tomcat-9.0.75.zip
-sudo unzip apache-tomcat-9.0.75.zip
-sudo rm -rf apache-tomcat-9.0.75.zip
+sudo wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.76/bin/apache-tomcat-9.0.76.tar.gz
+sudo tar -xf apache-tomcat-9.0.76.tar.gz
+sudo rm -rf apache-tomcat-9.0.76.tar.gz
 ### rename tomcat for good naming convention
-sudo mv apache-tomcat-9.0.75 tomcat9  
+sudo mv apache-tomcat-9.0.76 tomcat9  
 ### assign executable permissions to the tomcat home directory
 sudo chmod 777 -R /opt/tomcat9
 sudo chown ec2-user -R /opt/tomcat9
@@ -44,4 +44,35 @@ sudo ln -s /opt/tomcat9/bin/shutdown.sh /usr/bin/stoptomcat
 starttomcat
 sudo su - ec2-user
 ```
+
+vi /opt/tomcat9/webapps/manager/META-INF/context.xml
+# Find the following line within the document:  allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+# Edit this line to show this:  allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1 |.*" />
+
+vi /opt/tomcat9/conf/tomcat-users.xml
+# Edit this file and add the following lines just before tag "</tomcat-users>"
+<role rolename="admin-gui,manager-gui"/> 
+<user username="admin" password="tomhost@80" roles="admin-gui,manager-gui"/>
+
+
+
+
+
+scp -i key target/*war ec2-user@172.31.64.214:/opt/tomcat9/webapps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
