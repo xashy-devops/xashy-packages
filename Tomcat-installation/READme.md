@@ -43,7 +43,7 @@ sudo ln -s /opt/tomcat9/bin/startup.sh /usr/bin/starttomcat
 sudo ln -s /opt/tomcat9/bin/shutdown.sh /usr/bin/stoptomcat
 starttomcat
 sudo su - ec2-user
-```
+
 
 vi /opt/tomcat9/webapps/manager/META-INF/context.xml
 # Find the following line within the document:  allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
@@ -60,7 +60,7 @@ vi /opt/tomcat9/conf/tomcat-users.xml
 
 scp -i key target/*war ec2-user@172.31.64.214:/opt/tomcat9/webapps
 
-
+```
 
 
 
