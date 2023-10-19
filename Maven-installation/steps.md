@@ -37,7 +37,7 @@ sudo yum install java-11-openjdk-devel java-1.8.0-openjdk-devel -y
 ```
 ### Check the java version to confrm that java has been installed successfully
 ``` sh
-java -version
+java --version
 ```
 ### Check the git version to confrm that git has been installed successfully
 ``` sh
@@ -76,6 +76,6 @@ source ~/.bash_profile
 ``` 
 ### Verify if maven is running
 ``` sh
-mvn -version
+mvn --version
 ```
 
