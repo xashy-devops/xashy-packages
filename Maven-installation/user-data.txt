@@ -1,0 +1,10 @@
+#!/bin/bash
+sudo hostnamectl set-hostname maven
+sudo yum install wget nano tree unzip git-all java-11-openjdk-devel java-1.8.0-openjdk-devel -y
+sudo wget https://dlcdn.apache.org/maven/maven-3/3.9.5/binaries/apache-maven-3.9.5-bin.zip
+sudo unzip apache-maven-3.9.5-bin.zip
+sudo rm -rf apache-maven-3.9.5-bin.zip
+sudo mv apache-maven-3.9.5 /opt/maven
+echo 'export M2_HOME=/opt/maven' | sudo tee -a /home/ec2-user/.bash_profile
+echo 'export PATH=$PATH:$M2_HOME/bin' | sudo tee -a /home/ec2-user/.bash_profile
+sudo -u ec2-user source /home/ec2-user/.bash_profile
