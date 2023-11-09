@@ -41,7 +41,7 @@ sudo usermod -aG docker ${USER}
 ```
 To apply the new group membership, you can log out of the server and back in, or you can type the following:
 ```sh
-su - ${USER}
+sudo su - ${USER}
 ```
 You will be prompted to enter your user's password to continue.
 ### Confirm that your user is now added to the Docker group by running:
