@@ -27,9 +27,9 @@ sudo yum install wget unzip -y
 ## Install Tomcat version 9.0.85
 ### Download and extract the tomcat server
 ``` sh
-sudo wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.85/bin/apache-tomcat-9.0.85.tar.gz
-sudo tar -xf apache-tomcat-9.0.85.tar.gz
-sudo rm -rf apache-tomcat-9.0.85.tar.gz
+sudo wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.89/bin/apache-tomcat-9.0.89.tar.gz
+sudo tar -xf apache-tomcat-9.0.89.tar.gz
+sudo rm -rf apache-tomcat-9.0.89.tar.gz
 ### rename tomcat for good naming convention
 sudo mv apache-tomcat-9.0.85 tomcat9  
 ### assign executable permissions to the tomcat home directory
